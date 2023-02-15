@@ -1,0 +1,141 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+  crossorigin="anonymous"
+>
+
+<div id="main">
+  <div class="p-5">
+    <h1 class="heading">{{ section.settings.title }}</h1>
+    <p class="subHeading">{{ section.settings.text }}</p>
+    {%- if section.settings.buttonText != '' -%}
+      <button class="button">{{ section.settings.buttonText }}</button>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  #main{
+    background-color: {{section.settings.main_backgroud}};
+    background-image: url("{{ section.settings.section_background_image | img_url: 'master' }}");
+  }
+  .heading{
+    color: {{section.settings.heading_color}}
+  }
+  .subHeading{
+    font-size: {{ section.settings.font_size }}px;
+    color: {{ section.settings.subheading_color }};
+  }
+  .button{
+    background-color: {{ section.settings.buttonColor }};
+    color: {{ section.settings.buttonTextColor }};
+    border-radius: {{section.settings.buttonBorder}}px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Learning",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Text Inputs"
+    },
+    {
+      "type":"text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Section title here"
+    },
+    {
+      "type":"text",
+      "id": "text",
+      "label": "Sub Heading",
+      "default": "Enter some text here"
+    },
+    {
+      "type":"text",
+      "id": "buttonText",
+      "label": "Button Text",
+      "default": "Click Me"
+    },
+    {
+      "type": "header",
+      "content": "Size Inputs"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Sub Heading Font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "buttonBorder",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Border Radius",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Color Inputs"
+    },
+    {
+      "type": "color",
+      "id": "main_backgroud",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Sub Heading Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "buttonColor",
+      "label": "Button Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "buttonTextColor",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Image selection"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_background_image",
+      "label": "Section Backgroung Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Learning Section",
+      "category": "ADVANCED LAYOUT"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}
