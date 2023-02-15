@@ -1,5 +1,2 @@
 # Custom Section for Shopify Themes
-
-Theses section can be added to any shopify theme by creating a new files in sections directory.
-
-This repository contains custom section liquid files that you can add into your shopify store. And can modify it as per your need.
+This repository contains custom section liquid files that you can add into any of your shopify theme. And can modify it as per your need.
