@@ -2,8 +2,11 @@
 This repository contains custom section liquid files that you can add into any of your shopify theme. And can modify it as per your need.
 
 How to add this file into your theme
+
 Example:
+
 File Name: starter.liquiq
+
 1- Login to your shopify store, go to online store, click three dots with customize theme and click edit code
 
 ![image](https://user-images.githubusercontent.com/92258996/218970307-ae3d17b3-70fb-415a-aba2-5e689816df9e.png)
